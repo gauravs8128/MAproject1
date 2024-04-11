@@ -147,11 +147,14 @@ class MatrixCalculator: # A class to perform basic matrix operations.
     A^T * A*X' = A^T * b
     '''
     b = input_matrix()
-    temp = np.transpose(self.matrix1)
-    if temp.shape[0] == self.matrix1.shape[1]:
-     temp = np.transpose(self.matrix1) * self.matrix1
+  
+    
+    temp = np.transpose(self.matrix1) * self.matrix1
+    
     if temp.shape[0] == b.shape[1]:
      temp2 =np.transpose(self.matrix1) * b
+    else:
+       return("Entered b doesnt have necessary shape")
 
     x = np.linalg.solve(temp, temp2)
 
@@ -248,6 +251,6 @@ calculator = MatrixCalculator(matrix1, matrix2)
 #   print("LU factorization:")
 #   print(result)
 
-reult = calculator.LeastSquareSolution
+reult = calculator.LeastSquareSolution()
 print(reult)
 
