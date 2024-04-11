@@ -1,1 +1,10 @@
-//Add all the functions here ( Name with their Usage ) .
+//Add all the functions here ( Name with their Usage ).
+
+!. Addition.
+2. Subtraction.
+3. Multiplication.
+4. Inverse.(Through Gauss jordan method)
+5. LU factorization.
+6. determinant calculation.
+7. Rank of the matrix.
+
