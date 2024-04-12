@@ -1,16 +1,18 @@
 //Add all the functions here ( Name with their Usage ).
 
-!. Addition.
-2. Subtraction.
-3. Multiplication.
-4. Inverse.(Through Gauss jordan method)
-5. LU factorization.
-6. determinant calculation.
-7. Rank of the matrix.
-8.Least Square Solutions
-9.Eigenvalues and Eigenvector of a matrix
+!. Addition.(done)
+2. Subtraction.(done)
+3. Multiplication.(done)
+4. Inverse.(done)
+5. LU factorization.(done)
+6. determinant calculation.(done)
+7. Rank of the matrix.(done)
+8. Eigenvalues and Eigenvector of a matrix(done)
+
+
+9. SquareLeast Solutions
 10.Checking whether vectors are orthogonal or not
-11. Creating Orthonormal basis from a set of vectors using Gram- schimdt theorem
-12. Checking whether a set of vectors is a vector space or not
-13.
+11.Creating Orthonormal basis from a set of vectors using Gram- schimdt theorem
+12.Checking whether a set of vectors is a vector space or not
+
 
