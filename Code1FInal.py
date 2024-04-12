@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def get_matrix_from_user():
@@ -30,16 +29,31 @@ number = int(input("Enter a number: "))
 if number == 1:
     matrix1 = get_matrix_from_user()
     matrix2 = get_matrix_from_user()
-    if matrix1 is not None and matrix2 is not None:
-        matrix1 = np.array(matrix1)
-        matrix2 = np.array(matrix2)
-        if matrix1.shape != matrix2.shape:
-            print("Error: Matrices must have the same shape for addition and subtraction.")
-        else:
-            matrix_sum = np.add(matrix1, matrix2)
-            print("\nMatrix Addition:")
-            print(matrix_sum)
 
+
+def add_matrices(matrix1, matrix2):
+    # Check if the dimensions of both matrices are the same
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        print("Error: Matrices must have the same dimensions for addition.")
+        return None
+
+    # Initialize a result matrix with zeros
+    result = [[0 for _ in range(len(matrix1[0]))] for _ in range(len(matrix1))]
+
+    # Iterate through each element of the matrices and add them
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1[0])):
+            result[i][j] = matrix1[i][j] + matrix2[i][j]
+
+    return result
+# Perform matrix addition
+result = add_matrices(matrix1, matrix2)
+
+# Print the result
+if result:
+    print("Matrix Addition Result:")
+    for row in result:
+        print(row)
 elif number == 2:
     # Perform subtraction
     matrix1 = get_matrix_from_user()
