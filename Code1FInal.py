@@ -142,8 +142,42 @@ elif number == 5:
 
 elif number == 6:
     # Calculate determinant
-    pass
+    def det_recursive(A):
+        """
+        This function calculates the determinant of a matrix using recursion and block partitioned matrices.
 
+        Args:
+            A: A square numpy array representing the matrix.
+
+        Returns:
+            The determinant of the matrix.
+        """
+        n = len(A)
+        if n == 1:
+            return A[0, 0]
+        elif n == 2:
+            return A[0, 0] * A[1, 1] - A[0, 1] * A[1, 0]
+        else:
+            # Split the matrix into submatrices
+            A11 = A[:n//2, :n//2]
+            A12 = A[:n//2, n//2:]
+            A21 = A[n//2:, :n//2]
+            A22 = A[n//2:, n//2:]
+
+            # Calculate determinants of submatrices recursively
+            det_A11 = det_recursive(A11)
+            det_A22 = det_recursive(A22)
+
+            # Calculate the determinant using the block matrix formula
+            return det_A11 * det_A22 - np.linalg.det(A12 @ A21)
+
+    # Create a sample 10x10 matrix
+    A = np.random.rand(10, 10)
+
+    # Calculate the determinant using the recursive function
+    determinant = det_recursive(A)
+
+    print("Determinant of the matrix:", determinant)
 elif number == 7:
     # Calculate rank
     matrix1 = get_matrix_from_user()
